@@ -27,6 +27,6 @@ jobs:
     - name: run tests
       run: |
         echo "nunit3-console"
-        "TestGit\packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe \TestGit.Tests\bin\Debug\TestGit.Tests.dll
+        "TestGit\packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe" \TestGit.Tests\bin\Debug\TestGit.Tests.dll
       shell: cmd
 

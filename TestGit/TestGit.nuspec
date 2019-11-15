@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TestGit</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Greg Block</authors>
+    <owners>Greg Block</owners>
+    <description>Project to test Github on</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags></tags>
+  </metadata>
+</package>

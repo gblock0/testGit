@@ -31,4 +31,4 @@ jobs:
         nuget pack TestGit\TestGit.nuspec
         ls
         ls TestGit
-        nuget push TestGit\testGit.nupkg -Source "GPR"
+        nuget push TestGit.1.0.0.nupkg -Source "GPR"

@@ -6,6 +6,11 @@ jobs:
   testStuffOut:
     runs-on: windows-latest
     steps:
-    - name: see if msbuild is installed
+    # Checkout code from repo
+    - name: checkout repo
+      uses: actions/checkout@v1
+    # use msbuild to build VS solution
+    - name: build solution
       run: |
-        ls "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\\MSBuild\Current\Bin"
+        echo "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\bin\MSBuild.exe TestGit.sln"
+        "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe" TestGit.sln

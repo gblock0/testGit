@@ -15,5 +15,5 @@ jobs:
         ls
     - name: build solution
       run: |
-        echo "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\bin\MSBuild.exe TestGit.sln"
+        echo "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\bin\MSBuild.exe"
         "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"

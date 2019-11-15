@@ -3,7 +3,7 @@ name: .NET Core
 on: [push]
 
 jobs:
-  testStuffOut:
+  Build and Run Tests:
     runs-on: windows-latest
     steps:
     # Checkout code from repo

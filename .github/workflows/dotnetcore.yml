@@ -10,5 +10,5 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build with msbuild
-      run: msbuild /maxcpucount /t:clean /p:Configuartion=Debug;Platform="Any CPU" . 
+      run: msbuild 
       shell: cmd

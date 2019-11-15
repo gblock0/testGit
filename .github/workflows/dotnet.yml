@@ -10,7 +10,7 @@ jobs:
     - name: checkout repo
       uses: actions/checkout@v1
     # use msbuild to build VS solution
-    - name: test
+    - name: Run "ls"
       run: |
         ls
     - name: download nuget
@@ -27,6 +27,6 @@ jobs:
     - name: run tests
       run: |
         echo "TestGit\packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe TestGit.Tests\bin\Debug\TestGit.Tests.dll"
-        "TestGit\packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe" TestGit.Tests\bin\Debug\TestGit.Tests.dll
+        "packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe" TestGit.Tests\bin\Debug\TestGit.Tests.dll
       shell: cmd
 

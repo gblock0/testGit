@@ -24,3 +24,11 @@ jobs:
         echo "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\bin\MSBuild.exe"
         "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe" TestGit.sln
       shell: cmd
+    - name: download nunit3-console
+      uses: nunit/nunit-console@v3.10
+    - name: run tests
+      run: |
+        echo "nunit3-console"
+        nunit3-console.exe \TestGit.Tests\bin\Debug\TestGit.Tests.dll
+      shell: cmd
+

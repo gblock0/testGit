@@ -3,7 +3,7 @@ name: .NET Core
 on: [push]
 
 jobs:
-  Build, Run Tests, and Publish Nuget:
+  Build Run Tests and Publish Nuget:
     runs-on: windows-latest
     steps:
     # Checkout code from repo

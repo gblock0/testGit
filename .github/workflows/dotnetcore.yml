@@ -9,8 +9,6 @@ jobs:
     # Checkout code from repo
     - name: checkout repo
       uses: actions/checkout@v1
-    - name: download nunit3-console
-      uses: gblock0/setup-nunit3-console@master
     # use msbuild to build VS solution
     - name: test
       run: |

@@ -12,7 +12,7 @@ jobs:
     # use msbuild to build VS solution
     - name: test
       run: |
-        echo ls -a
+        ls -a
     - name: build solution
       run: |
         echo "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\bin\MSBuild.exe TestGit.sln"

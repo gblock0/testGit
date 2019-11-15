@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: microsoft/msbuild@15.9.20
+    - uses: microsoft/msbuild@v15
     - name: Build with msbuild
       run: msbuild
       shell: cmd

@@ -9,9 +9,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Setup .NET Core
-      uses: dotnet/standard@
-      with:
-        dotnet-version: 2.2.108
-    - name: Build with dotnet
-      run: dotnet build --configuration Release
+    - name: Build with msbuild
+      run: msbuild /maxcpucount /t:clean /p:Configuartion=Debug;Platform="Any CPU" . 
+      shell: cmd

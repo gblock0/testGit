@@ -9,10 +9,6 @@ jobs:
     # Checkout code from repo
     - name: checkout repo
       uses: actions/checkout@v1
-    # use msbuild to build VS solution
-    - name: Run "ls"
-      run: |
-        ls
     - name: download nuget
       uses: warrenbuckley/Setup-Nuget@v1
     - name: restore nuget packages

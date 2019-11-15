@@ -13,8 +13,14 @@ jobs:
     - name: test
       run: |
         ls
+    - name: download nuget
+      uses: warrenbuckley/Setup-Nuget@v1
+    - name: restore nuget packages
+      run: |
+        echo "nuget.exe restore TestGit.sln"
+        nuget.exe restore TestGit.sln
     - name: build solution
       run: |
         echo "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\bin\MSBuild.exe"
-        "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe" .
+        "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe" TestGit.sln
       shell: cmd

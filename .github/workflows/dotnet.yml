@@ -30,5 +30,3 @@ jobs:
         nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/gblock0/index.json" -UserName gblock0 -Password GH_TOKEN
         nuget pack
         nuget push "testGit.nupkg" -Source "GitHub"
-        
-

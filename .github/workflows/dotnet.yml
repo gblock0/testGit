@@ -3,7 +3,7 @@ name: .NET Core
 on: [push]
 
 jobs:
-  Build and Run Tests:
+  Build, Run Tests, and Publish Nuget:
     runs-on: windows-latest
     steps:
     # Checkout code from repo
@@ -25,4 +25,10 @@ jobs:
         echo "TestGit\packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe TestGit.Tests\bin\Debug\TestGit.Tests.dll"
         "packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe" TestGit.Tests\bin\Debug\TestGit.Tests.dll
       shell: cmd
+    - name: Publish Nuget
+      run: |
+        nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/gblock0/index.json" -UserName gblock0 -Password GH_TOKEN
+        nuget pack
+        nuget push "testGit.nupkg" -Source "GitHub"
+        
 

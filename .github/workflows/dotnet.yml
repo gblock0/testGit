@@ -25,10 +25,12 @@ jobs:
         echo "TestGit\packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe TestGit.Tests\bin\Debug\TestGit.Tests.dll"
         "packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe" TestGit.Tests\bin\Debug\TestGit.Tests.dll
       shell: cmd
+    - name: Setup Nuget
+      run: |
+       nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/gblock0/index.json" -UserName gblock0 -Password GH_TOKEN
     - name: Publish Nuget
       run: |
         ls
         ls TestGit
-        nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/gblock0/index.json" -UserName gblock0 -Password GH_TOKEN
         nuget pack TestGit\TestGit.nuspec
         nuget push TestGit.1.0.0.nupkg -Source "GitHub"

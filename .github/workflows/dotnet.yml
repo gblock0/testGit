@@ -33,4 +33,5 @@ jobs:
         ls
         ls TestGit
         nuget pack TestGit\TestGit.csproj
+        nuget setapikey GITHUB_TOKEN -Source "GitHub"
         nuget push TestGit.1.0.0.nupkg -Source "GitHub"

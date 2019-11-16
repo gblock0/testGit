@@ -28,8 +28,8 @@ jobs:
     - name: Setup Nuget
       run: |
         nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/gblock0/index.json" -UserName gblock0 -Password ${{ secrets.GITHUB_TOKEN }}
-        nuget pack TestGit\TestGit.csproj -Properties Configuration=Release -OutputDirectory out
+        nuget pack TestGit\TestGit.csproj
         nuget setapikey ${{ secrets.GITHUB_TOKEN }} -Source "GitHub"
         ls
         ls TestGit
-        nuget push .\TestGit\out\*.nupkg -Source "GitHub" -SkipDuplicate
+        nuget push *.nupkg -Source "GitHub" -SkipDuplicate

@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>TestGit</id>
-    <version>1.0</version>
+    <version>$version$</version>
     <authors>Greg Block</authors>
     <description>Project to test Github on</description>
   </metadata>

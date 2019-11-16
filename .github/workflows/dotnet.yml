@@ -27,11 +27,11 @@ jobs:
       shell: cmd
     - name: Setup Nuget
       run: |
-       nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/gblock0/index.json" -UserName gblock0 -Password GITHUB_TOKEN
+       nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/gblock0/index.json" -UserName gblock0 -Password ${{ secrets.GITHUB_TOKEN }}
     - name: Publish Nuget
       run: |
         ls
         ls TestGit
         nuget pack TestGit\TestGit.csproj
-        nuget setapikey GITHUB_TOKEN -Source "GitHub"
+        nuget setapikey ${{ secrets.GITHUB_TOKEN }} -Source "GitHub"
         nuget push TestGit.1.0.0.nupkg -Source "GitHub"

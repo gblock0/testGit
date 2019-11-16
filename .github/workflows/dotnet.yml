@@ -32,5 +32,5 @@ jobs:
       run: |
         ls
         ls TestGit
-        nuget pack TestGit\TestGit.nuspec
+        nuget pack TestGit\TestGit.csproj
         nuget push TestGit.1.0.0.nupkg -Source "GitHub"

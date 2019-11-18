@@ -12,7 +12,6 @@ namespace TestGit
         public static string ParseOutFirstArg(string[] args)
         {
             // change some stuff
-            // add comment
             return args[0];
         }
     }

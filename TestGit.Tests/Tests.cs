@@ -9,9 +9,9 @@ namespace TestGit.Tests
         [Test]
         public void Test1()
         {
-            var args = new[] {"test2", "test3", "test4"};
+            var args = new[] {"test1", "test3", "test4"};
             var firstArg = TestGit.ParseOutFirstArg(args);
-            Assert.AreEqual(firstArg, "test3");
+            Assert.AreEqual(firstArg, "test2");
         }
     }
 }

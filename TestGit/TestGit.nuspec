@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TestGit</id>
+    <version>$version$</version>
+    <authors>Greg Block</authors>
+    <description>Project to test Github on</description>
+  </metadata>
+</package>

@@ -3,16 +3,12 @@ name: .NET Core
 on: [push]
 
 jobs:
-  testStuffOut:
+  BuildRunTestsAndPublishNuget:
     runs-on: windows-latest
     steps:
     # Checkout code from repo
     - name: checkout repo
       uses: actions/checkout@v1
-    # use msbuild to build VS solution
-    - name: Run "ls"
-      run: |
-        ls
     - name: download nuget
       uses: warrenbuckley/Setup-Nuget@v1
     - name: restore nuget packages
@@ -29,4 +25,11 @@ jobs:
         echo "TestGit\packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe TestGit.Tests\bin\Debug\TestGit.Tests.dll"
         "packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe" TestGit.Tests\bin\Debug\TestGit.Tests.dll
       shell: cmd
-
+    - name: Setup Nuget
+      run: |
+        nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/gblock0/index.json" -UserName gblock0 -Password ${{ secrets.GITHUB_TOKEN }}
+        nuget pack TestGit\TestGit.csproj
+        nuget setapikey ${{ secrets.GITHUB_TOKEN }} -Source "GitHub"
+        ls
+        ls TestGit
+        nuget push *.nupkg -Source "GitHub" -SkipDuplicate

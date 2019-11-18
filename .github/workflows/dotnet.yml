@@ -22,7 +22,7 @@ jobs:
       shell: cmd 
     - name: check sql
       run: |
-        sqlcmd
+        sqlcmd -v
       shell: cmd
     - name: run tests
       run: |

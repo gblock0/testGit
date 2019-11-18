@@ -35,6 +35,7 @@ jobs:
         token: ${{secrets.GITHUB_TOKEN}}        
     - name: Print new build number
       run: echo Build number is $BUILD_NUMBER - ${{ steps.buildnumber.outputs.build_number }}
+      shell: bash
     - name: Setup Nuget
       run: |
         nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/gblock0/index.json" -UserName gblock0 -Password ${{ secrets.GITHUB_TOKEN }}

@@ -38,7 +38,7 @@ jobs:
     - name: Setup Nuget
       run: |
         nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/gblock0/index.json" -UserName gblock0 -Password ${{ secrets.GITHUB_TOKEN }}
-        nuget pack TestGit\TestGit.csproj -Version $BUILD_NUMBER
+        nuget pack TestGit\TestGit.csproj -Version ${{ steps.buildnumber.outputs.build_number }}
         nuget setapikey ${{ secrets.GITHUB_TOKEN }} -Source "GitHub"
         ls
         ls TestGit

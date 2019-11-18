@@ -11,7 +11,7 @@ namespace TestGit.Tests
         {
             var args = new[] {"test2", "test3"};
             var firstArg = TestGit.ParseOutFirstArg(args);
-            Assert.AreEqual(firstArg, "test2");
+            Assert.AreEqual(firstArg, "test3");
         }
     }
 }

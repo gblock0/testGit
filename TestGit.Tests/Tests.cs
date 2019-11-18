@@ -9,7 +9,7 @@ namespace TestGit.Tests
         [Test]
         public void Test1()
         {
-            var args = new[] {"test2", "test3"};
+            var args = new[] {"test2", "test3", "test4"};
             var firstArg = TestGit.ParseOutFirstArg(args);
             Assert.AreEqual(firstArg, "test3");
         }

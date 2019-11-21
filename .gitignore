@@ -2,3 +2,8 @@ bin/
 obj/
 /packages/
 .idea/
+.vs/TestGit/v16/.suo
+.vs/TestGit/v16/Server/sqlite3/db.lock
+.vs/TestGit/v16/Server/sqlite3/storage.ide
+.vs/TestGit/v16/Server/sqlite3/storage.ide-shm
+.vs/TestGit/v16/Server/sqlite3/storage.ide-wal
